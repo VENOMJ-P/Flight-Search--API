@@ -1,16 +1,17 @@
-const CityServices = require("../services/index");
+const {CityServices} = require("../services/index");
 
 const cityServices = new CityServices();
 
 const create= async (req,res) => {
     try {
+        console.log("contoller");
         const city = await cityServices.createCity(req.body);
         return res.status(201).json({
             data: city,
             success: true,
             message: "Successfully created a city",
             error: {}
-        })
+        });
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -18,7 +19,7 @@ const create= async (req,res) => {
             success: false,
             message: "Not able to create a city",
             error: error
-        })
+        });
     }
 }
 
@@ -30,7 +31,7 @@ const destroy = async (req,res) => {
             success: true,
             message: "Successfully deleted the city",
             error: {}
-        })
+        });
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -38,19 +39,19 @@ const destroy = async (req,res) => {
             success: false,
             message: "Not able to delete the city",
             error: error
-        })
+        });
     }
 }
 
 const update = async (req,res) => {
     try {
-        const city = await cityServices.updateCity(req,params.id,req.body);
+        const city = await cityServices.updateCity(req.params.id,req.body);
         return res.status(200).json({
             data: city,
             success: true,
             message: "Successfully updated the city",
             error: {}
-        })
+        });
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -58,7 +59,7 @@ const update = async (req,res) => {
             success: false,
             message: "Not able to update the city",
             error: error
-        })
+        });
     }
 }
 
@@ -70,7 +71,7 @@ const get = async (req,res) => {
             success: true,
             message: "Successfully get the city",
             error: {}
-        })
+        });
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -78,7 +79,7 @@ const get = async (req,res) => {
             success: false,
             message: "Not able to get the city",
             error: error
-        })
+        });
     }
 }
 
