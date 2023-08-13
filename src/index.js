@@ -14,8 +14,6 @@ const setupStartServer = async ()=>{
 
     app.listen(PORT,()=>{
         console.log(`Successfully server started at ${PORT}`);
-        const repo = new CityRepository();
-        repo.createCity({name:"Patna"});
     });
 }
 
