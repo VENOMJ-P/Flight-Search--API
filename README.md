@@ -26,3 +26,9 @@
 ```
 - Once you've added your db config as listed above, go to the src folder from your terminal and execute `npx sequelize db:create`  and then execute `npx sequelize db:migrate`
 
+## Tables
+
+### City -> id, name, created_at, updated_at
+### Airport -> id, name, address, city_id, created_at, updated_at
+
+Relationship -> City has many airports and Airport belongs to a city (one to many)
