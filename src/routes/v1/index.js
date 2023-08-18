@@ -13,6 +13,7 @@ router.get('/city/:id',CityController.get);
 router.get('/city',CityController.getAll);
 
 router.post('/flights',flightController.create);
+router.get('/flights',flightController.getAll);
 
 module.exports=router;
 
